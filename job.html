@@ -1299,7 +1299,7 @@
                                 var metaList = document.getElementsByTagName("META");
                                 var index = 0;
                                 for (var i = 0; i < metaList.length; ++i) {
-                                    if (metaList[i].indexOf('og:title') > -1) {
+                                    if (metaList[i].getAttribute('property') === 'og:title') {
                                         index = i;
                                     }
                                 }
