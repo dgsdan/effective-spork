@@ -1296,6 +1296,8 @@
                                 document.getElementById("job-description").innerHTML = JSON.parse(this.responseText).jsonld.description;
                                 document.getElementById("dynamicJSONLD").innerHTML = JSON.stringify(JSON.parse(this.responseText).jsonld, null, 4);
                                 document.title = "Vaga: " + JSON.parse(this.responseText).jsonld.title;
+                                var metaList = document.getElementsByTagName("META").length;
+                                console.log(metaList)
                             } else {
                                 console.log('this.readyState: ' + this.readyState);
                             }
