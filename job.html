@@ -1297,8 +1297,12 @@
                                 document.getElementById("dynamicJSONLD").innerHTML = JSON.stringify(JSON.parse(this.responseText).jsonld, null, 4);
                                 document.title = "Vaga: " + JSON.parse(this.responseText).jsonld.title;
                                 var metaList = document.getElementsByTagName("META");
-                                console.log(metaList[0]);
-                                console.log(metaList[1]);
+                                var index = metaList.findIndex(meta => {
+                                    if (meta.indexOf('og:title') > -1) {
+                                        return true;
+                                    }
+                                })
+                                console.log(metaList[index]);
                             } else {
                                 console.log('this.readyState: ' + this.readyState);
                             }
